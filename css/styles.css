@@ -13,9 +13,11 @@
 
 #intro {
   color: #FFFFFF;
-  outline-color: #000000;
-  outline-width: 10px;
-  outline-style: dotted;
+  text-outline: 10px 10px #000000;
+}
+
+#subway-map {
+  width: 75%
 }
 
 #legend {
@@ -26,6 +28,8 @@
   margin-left: 15px;
   width: 10px;
 }
+
+
 
 .colorBox {
   height: 10px;
@@ -121,6 +125,8 @@ h6 {
   display: table;
   width: 100%;
   height: auto;
+  outline-color: #000000;
+  outline-width: 10px;
   padding-top: 8rem;
   padding-bottom: 8rem;
   background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../img/subway1.jpg");
