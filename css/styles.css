@@ -81,7 +81,7 @@ h6 {
 
 /* Map */
 .map {
-  min-height: 30rem;
+  height: 100%;
 }
 
 @media (max-width: 992px) {
@@ -125,11 +125,14 @@ h6 {
   display: table;
   width: 100%;
   height: auto;
-  outline-color: #000000;
-  outline-width: 10px;
+  text-shadow:
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    2px 2px 0 #000;
   padding-top: 8rem;
   padding-bottom: 8rem;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../img/subway1.jpg");
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../img/subway2.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -138,8 +141,6 @@ h6 {
 .masthead h1 {
   font-size: 4rem;
   margin: 0;
-  outline-color: #000000;
-  outline-width: 10px;
   padding: 0;
 }
 
