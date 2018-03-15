@@ -12,14 +12,7 @@
 	}).addTo(map);
 
 	// Code to activate scroll wheel zoom after a click on the map PENDING REVISION
-	map.on('click', function() {
-	  if (map.scrollWheelZoom.enabled()) {
-	    map.scrollWheelZoom.disable();
-	    }
-	    else {
-	    map.scrollWheelZoom.enable();
-	    }
-	  });
+	map.scrollWheelZoom.disable();
 
 // ********************************** 2. Setting up layers************************************************
 	//3 layers: Layer A: All stations, Accessible stations, non accessible stations
