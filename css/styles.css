@@ -3,17 +3,6 @@
   transition: none;
 } */
 
-#intro {
-  background-image: url('/img/subway1.jpg');
-  width: 100%;
-  color: #FFFFFF;
-  height: 100%;
-  width: 100%;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-
 #title1 {
   color: #fff;
   text-shadow:
@@ -21,6 +10,19 @@
     2px -2px 0 #000,
     -2px 2px 0 #000,
     2px 2px 0 #000;
+}
+
+#intro {
+  /* background-image: url('/img/subway1.jpg'); */
+  background-color: black;
+  width: 100%;
+  color: #FFFFFF;
+  height: 100%;
+  width: 100%;
+  vertical-align: middle;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 #paragraph {
@@ -31,6 +33,7 @@
   height: auto;
   padding-top: 5rem;
   padding-bottom: 8rem;
+  vertical-align: middle;
   color: #FFFFFF;
   text-shadow:
     -2px -2px 0 #000,
@@ -50,7 +53,8 @@
 }
 
 #panel {
-  width: 75%;
+  background-color: black;
+  width: 100%;
   height: 20%;
   padding-top: 2rem;
   padding-bottom: 4rem;
@@ -82,7 +86,7 @@ body {
   font-family: 'Source Sans Pro';
 }
 
-/* Side Menu */
+/* Side bar/navigation bar */
 #sidebar-wrapper {
   position: fixed;
   z-index: 2;
@@ -95,8 +99,8 @@ body {
   -o-transition: all 0.4s ease 0s;
   transition: all 0.4s ease 0s;
   transform: translateX(250px);
-  background: #1D809F;
-  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  background: $primary;
+  border-left: 1px solid fade-out($white, 0.9);
 }
 
 .sidebar-nav {
@@ -108,17 +112,20 @@ body {
   list-style: none;
 }
 
+.sidebar-nav li {
+}
+
 .sidebar-nav li.sidebar-nav-item a {
   display: block;
   text-decoration: none;
-  color: #fff;
+  color: $white;
   padding: 15px;
 }
 
 .sidebar-nav li a:hover {
   text-decoration: none;
   color: #fff;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, .2);
 }
 
 .sidebar-nav li a:active,
@@ -128,7 +135,7 @@ body {
 
 .sidebar-nav > .sidebar-brand {
   font-size: 1.2rem;
-  background: rgba(52, 58, 64, 0.1);
+  background: fade-out($gray-800, .9);
   height: 80px;
   line-height: 50px;
   padding-top: 15px;
@@ -137,7 +144,7 @@ body {
 }
 
 .sidebar-nav > .sidebar-brand a {
-  color: #fff;
+  color: $white;
 }
 
 .sidebar-nav > .sidebar-brand a:hover {
@@ -159,21 +166,29 @@ body {
   position: fixed;
   right: 15px;
   top: 15px;
+
   width: 50px;
   height: 50px;
+
   text-align: center;
-  color: #fff;
-  background: rgba(52, 58, 64, 0.5);
+
+  color: $white;
+  background: fade-out($gray-800, .5);
+
   line-height: 50px;
+
   z-index: 999;
-}
-
-.menu-toggle:focus, .menu-toggle:hover {
-  color: #fff;
-}
-
-.menu-toggle:hover {
-  background: #343a40;
+  &:focus,
+  &:hover {
+    color: $white;
+  }
+  &:hover {
+    background: $gray-800;
+  }
+  &.active {
+    // background-color: $white;
+    // color: $gray-900;
+  }
 }
 
 /* Buttons */
@@ -247,7 +262,7 @@ h6 {
   height: 50px;
   text-align: center;
   color: white;
-  background: rgba(63, 127, 191, 0.5);
+  background: rgba(0, 102, 204, 0.5);
   line-height: 45px;
 }
 
@@ -256,9 +271,45 @@ h6 {
 }
 
 .scroll-to-top:hover {
-  background: #3366cc;
+  background: rgba(0, 77, 153, 0.5);
 }
 
 .scroll-to-top i {
   font-weight: 800;
+}
+
+a {
+  color: #0066cc;
+}
+
+a:hover, a:focus, a:active {
+  color: #004d99;
+}
+
+.btn-primary {
+  background-color: #0066cc !important;
+  border-color: #0066cc !important;
+  color: #fff !important;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+  background-color: #004d99 !important;
+  border-color: #004d99 !important;
+}
+
+.btn-dark {
+  color: #fff !important;
+}
+
+.btn {
+  box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1);
+  font-weight: 700;
+}
+
+.bg-primary {
+  background-color: #0066cc !important;
+}
+
+.text-primary {
+  color: #0066cc !important;
 }
