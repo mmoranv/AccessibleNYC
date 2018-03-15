@@ -11,7 +11,7 @@ L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_L
   scrollWheelZoom: false,
 }).addTo(map);
 
-// Code to activate scroll wheel zoom after a click on the map
+// Code to activate scroll wheel zoom after a click on the map PENDING REVISION
 map.on('click', function() {
   if (map.scrollWheelZoom.enabled()) {
     map.scrollWheelZoom.disable();
@@ -41,23 +41,38 @@ $.getJSON('data/Baruch subway entrances/all_stops_nyc_2017.geojson', function(su
     }).addTo(map)
 });
 
-// Functions for buttons
+// Functions for buttons and sidebar
 (function($) {
   "use strict"; // Start of use strict
 
-	// Smooth scrolling using jQuery easing
-	$('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
-		if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-			var target = $(this.hash);
-			target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-			if (target.length) {
-				$('html, body').animate({
-					scrollTop: target.offset().top
-				}, 1000, "easeInOutExpo");
-				return false;
-			}
-		}
-	});
+  // Closes the sidebar menu
+  $(".menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#sidebar-wrapper").toggleClass("active");
+    $(".menu-toggle > .fa-bars, .menu-toggle > .fa-times").toggleClass("fa-bars fa-times");
+    $(this).toggleClass("active");
+  });
+
+  // Smooth scrolling using jQuery easing
+  $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000, "easeInOutExpo");
+        return false;
+      }
+    }
+  });
+
+  // Closes responsive menu when a scroll trigger link is clicked
+  $('#sidebar-wrapper .js-scroll-trigger').click(function() {
+    $("#sidebar-wrapper").removeClass("active");
+    $(".menu-toggle").removeClass("active");
+    $(".menu-toggle > .fa-bars, .menu-toggle > .fa-times").toggleClass("fa-bars fa-times");
+  });
 
   // Scroll to top button appear
   $(document).scroll(function() {
