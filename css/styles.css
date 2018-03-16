@@ -1,14 +1,13 @@
+#page-top {
+  background-image: url('/img/subway2.jpg');
+}
+
 #title1 {
   color: #fff;
-  text-shadow:
-    -2px -2px 0 #000,
-    2px -2px 0 #000,
-    -2px 2px 0 #000,
-    2px 2px 0 #000;
+  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
 }
 
 #intro {
-
   background-image: url('/img/subway1.jpg');
   color: #FFFFFF;
   height: 100%;
@@ -34,11 +33,7 @@
   padding-bottom: 8rem; */
   /* vertical-align: middle; */
   color: #FFFFFF;
-  text-shadow:
-    -2px -2px 0 #000,
-    2px -2px 0 #000,
-    -2px 2px 0 #000,
-    2px 2px 0 #000;
+  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
   ;
 }
 
@@ -53,17 +48,13 @@
 }
 
 #panel {
-  background-color: black;
-  margin-left: 0;
-  margin-right: 0;
-  /* width: 100%; */
+  background-color: white;
   height: 20%;
-  padding-top: 2rem;
+  padding-top: 4rem;
   padding-bottom: 4rem;
 }
 
-body,
-html {
+body, html {
   width: 100%;
   height: 100%;
 }
@@ -73,6 +64,7 @@ body {
 }
 
 /* Side bar/navigation bar */
+
 #sidebar-wrapper {
   position: fixed;
   z-index: 3;
@@ -98,8 +90,7 @@ body {
   list-style: none;
 }
 
-.sidebar-nav li {
-}
+.sidebar-nav li {}
 
 .sidebar-nav li.sidebar-nav-item a {
   display: block;
@@ -113,12 +104,11 @@ body {
   background: #004d99;
 }
 
-.sidebar-nav li a:active,
-.sidebar-nav li a:focus {
+.sidebar-nav li a:active, .sidebar-nav li a:focus {
   text-decoration: none;
 }
 
-.sidebar-nav > .sidebar-brand {
+.sidebar-nav>.sidebar-brand {
   font-size: 1.2rem;
   background: #004d99;
   height: 80px;
@@ -128,11 +118,11 @@ body {
   padding-left: 15px;
 }
 
-.sidebar-nav > .sidebar-brand a {
+.sidebar-nav>.sidebar-brand a {
   color: $white;
 }
 
-.sidebar-nav > .sidebar-brand a:hover {
+.sidebar-nav>.sidebar-brand a:hover {
   color: #fff;
   background: #004d99;
 }
@@ -151,35 +141,23 @@ body {
   position: fixed;
   right: 15px;
   top: 15px;
-
   width: 50px;
   height: 50px;
-
   text-align: center;
-
   color: $white;
   background: fade-out($gray-800, .5);
-
   line-height: 50px;
-
   z-index: 999;
-  &:focus,
-  &:hover {
+  &:focus, &:hover {
     color: $white;
   }
   &:hover {
     background: $gray-800;
   }
   &.active {
-    // background-color: $white;
+    // background-color: #004d99;
     // color: $gray-900;
   }
-}
-
-/* Buttons */
-
-.btn-xl {
-  padding: 1.25rem 2.5rem;
 }
 
 .content-section {
@@ -196,28 +174,11 @@ body {
   text-transform: uppercase;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
 }
 
-/* .text-faded {
-  color: rgba(255, 255, 255, 0.7);
-} */
-
 .masthead {
-  min-height: 30rem;
-  position: relative;
-  display: table;
-  width: 100%;
-  height: auto;
-  padding-top: 8rem;
-  padding-bottom: 8rem;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../img/subway2.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -271,6 +232,12 @@ a:hover, a:focus, a:active {
   color: #004d99;
 }
 
+/* Navigation buttons */
+
+.btn-xl {
+  padding: 1.25rem 2.5rem;
+}
+
 .btn-primary {
   background-color: #0066cc !important;
   border-color: #0066cc !important;
@@ -280,6 +247,28 @@ a:hover, a:focus, a:active {
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
   background-color: #004d99 !important;
   border-color: #004d99 !important;
+}
+
+/* Panel buttons */
+
+.btn-ada:hover {
+  border-color: #000 !important;
+  background-color: #00cc66 !important;
+}
+
+.btn-nada:hover {
+  border-color: #000 !important;
+  background-color: #ff0000 !important;
+}
+
+.btn-all:hover {
+  border-color: #000 !important;
+  background-color: steelblue !important;
+}
+
+.btn-lines:hover {
+  border-color: #000 !important;
+  background-color: #ff9900 !important;
 }
 
 .btn-dark {
