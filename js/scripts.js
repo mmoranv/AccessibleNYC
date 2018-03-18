@@ -4,9 +4,10 @@ var defaultZoom = 11;
 
 var map = L.map('subway-map').setView(defaultCenter, defaultZoom);
 
+let all_stops
 let ada_stops
 let nada_stops
-let all_stops
+let bus_stops
 let subway_lines
 
 // WorldGreyCanvas TileLayer from http://leaflet-extras.github.io/leaflet-providers/preview/
@@ -20,62 +21,198 @@ L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_L
 map.scrollWheelZoom.disable();
 
 // ********************************** 2. Setting up layers************************************************
-//3 layers: Layer A: All stations, Accessible stations, non accessible stations
+//5 layers: All stations, Accessible stations, non accessible stations, bus stops, subway lines.
 // Layer A: Color of the markers for All stations
-
 $.getJSON('data/all_stops_nyc_2017.geojson', function(subways) {
   all_stations = L.geoJSON(subways, {
     pointToLayer: function(feature, latlng) {
       return L.circleMarker(latlng, {
-        color: "#004d99",
-        radius: 2
-      }).bindPopup(feature.properties.stop_name + " on the " + feature.properties.trains + " train.");
+          color: "#004d99",
+          radius: 1
+        }).bindPopup(feature.properties.stop_name)
+        .openPopup().on('click', nada_stops)
+        .on('mouseover', function(e) {
+          this.openPopup();
+        })
+        .on('mouseout', function(e) {
+          this.closePopup();
+        });
     }
   });
 });
 
-// Function takes geojson object from '$.getJSON' and a char(2) landuse code
-// and returns a leaflet layer with
-// const getLandUseLayer = (mappluto, landUseCode) => {
-//   return L.geoJSON(mappluto, {
-//     filter: function(feature, layer) {
-//       feature.properties.land_use_17.indexOf(landUseCode)
-//     },
-//     style: propertyStyles,
-//     onEachFeature: propertyActions
-//   });
-// };
-
 // Layer B: Accessible stations
-// var ADA_Layer =
 $.getJSON('data/ada_stops_nyc_2017.geojson', function(subways) {
   ada_stops = L.geoJSON(subways, {
     pointToLayer: function(feature, latlng) {
       return L.circleMarker(latlng, {
-        color: "#00cc66",
-        radius: 2
-      }).bindPopup(feature.properties.stop_name + " station is accessible when using the " + feature.properties.trains + " train.");
+          color: "#00CC66",
+          radius: 2
+        }).bindPopup("<div style='text-align:center'>" + feature.properties.stop_name + " station is " + "<div style='color:#00CC66'>" + " accessible " + "</div>" + " when using the " + feature.properties.trains + " train." + "</div>")
+        .openPopup().on('click', nada_stops)
+        .on('mouseover', function(e) {
+          this.openPopup();
+        })
+        .on('mouseout', function(e) {
+          this.closePopup();
+        });
     }
   }).addTo(map);
 });
 
 // //Layer C: Non accessible stations
-// var n_ADA_Layer =
 $.getJSON('data/n_accessible_stops_nyc_2017.geojson', function(subways) {
   nada_stops = L.geoJSON(subways, {
     pointToLayer: function(feature, latlng) {
       return L.circleMarker(latlng, {
-        color: "red",
-        radius: 2
-      }).bindPopup(feature.properties.stop_name + " station is accessible when using the " + feature.properties.trains + " train.");
+          color: "#cc0000",
+          radius: 2
+        }).bindPopup("<div style='text-align:center'>" + feature.properties.stop_name + " station is " + "<div style='color:red'>" + " not accessible " + "</div>" + " when using the " + feature.properties.trains + " train." + "</div>")
+        .openPopup().on('click', nada_stops)
+        .on('mouseover', function(e) {
+          this.openPopup();
+        })
+        .on('mouseout', function(e) {
+          this.closePopup();
+        });
     }
   }).addTo(map);
 });
 
-// L.control.layers({}, layers).addTo(map);
+$.getJSON('data/bus_stops.geojson', function(buses) {
+  bus_stops = L.geoJSON(buses, {
+    pointToLayer: function(feature, latlng) {
+      return L.circleMarker(latlng, {
+          color: "#A486B2",
+          radius: 0.5
+        }).bindPopup(feature.properties.stop_name)
+        .openPopup().on('click', nada_stops)
+        .on('mouseover', function(e) {
+          this.openPopup();
+        })
+        .on('mouseout', function(e) {
+          this.closePopup();
+        });
+    }
+  });
+});
 
+$.getJSON('data/subway_lines.geojson', function(lines) {
+  subway_lines = L.geoJSON(lines, {
+    style: function(feature) {
+      switch (feature.properties.rt_symbol) {
+        case "1":
+          return {color: "#BD0026", weight: 0.7};
+        case "2":
+          return {color: "#BD0026", weight: 0.7};
+        case "3":
+          return {color: "#BD0026", weight: 0.7};
+        case "4":
+          return {color: "#008000", weight: 0.7};
+        case "5":
+          return {color: "#008000", weight: 0.7};
+        case "6":
+          return {color: "#008000", weight: 0.7};
+        case "7":
+          return {color: "#710B37", weight: 0.7};
+        case "A":
+          return {color: "#0057E7", weight: 0.7};
+        case "C":
+          return {color: "#0057E7", weight: 0.7};
+        case "E":
+          return {color: "#0057E7", weight: 0.7};
+        case "D":
+          return {color: "#F37735", weight: 0.7};
+        case "B":
+          return {color: "#F37735", weight: 0.7};
+        case "F":
+          return {color: "#F37735", weight: 0.7};
+        case "M":
+          return {color: "#F37735", weight: 0.7};
+        case "N":
+          return {color: "#FFDD00", weight: 0.7};
+        case "Q":
+          return {color: "#FFDD00", weight: 0.7};
+        case "R":
+          return {color: "#FFDD00", weight: 0.7};
+        case "W":
+          return {color: "#FFDD00", weight: 0.7};
+        case "L":
+          return {color: "#808080", weight: 0.7};
+        case "S":
+          return {color: "#808080", weight: 0.7};
+        case "G":
+          return {color: "#6CBE45", weight: 0.7};
+        case "J":
+          return {color: "#8D5524", weight: 0.7};
+        case "Z":
+          return {color: "#8D5524", weight: 0.7};
+      }
+    }
+  });
+});
 
-// Functions for buttons and sidebar
+//Buttons for layers
+// All stations
+var ALLOn = null;
+$("#btn-all").click(function() {
+  if (ALLOn) {
+    map.removeLayer(all_stations);
+    ALLOn = null;
+  } else {
+    ALLOn = true,
+      map.addLayer(all_stations);
+  }
+});
+
+// Accessible stations
+var ADAOn = true;
+$("#btn-ada").click(function() {
+  if (ADAOn) {
+    map.removeLayer(ada_stops);
+    ADAOn = null;
+  } else {
+    ADAOn = true,
+      map.addLayer(ada_stops);
+  }
+});
+// Non accessible stations
+var NADAOn = true;
+$("#btn-nada").click(function() {
+  if (NADAOn) {
+    map.removeLayer(nada_stops);
+    NADAOn = null;
+  } else {
+    NADAOn = true,
+      map.addLayer(nada_stops);
+  }
+});
+
+// bus stops
+var BUSOn = null;
+$("#btn-bus").click(function() {
+  if (BUSOn) {
+    map.removeLayer(bus_stops);
+    BUSOn = null;
+  } else {
+    BUSOn = true,
+      map.addLayer(bus_stops);
+  }
+});
+
+// subway lines
+var SUBOn = null;
+$("#btn-lines").click(function() {
+  if (SUBOn) {
+    map.removeLayer(subway_lines);
+    SUBOn = null;
+  } else {
+    SUBOn = true,
+      map.addLayer(subway_lines);
+  }
+});
+
+// Functions for scroll-to-top buttons and sidebar (modified from bootstrap template)
 (function($) {
   "use strict"; // Start of use strict
 
