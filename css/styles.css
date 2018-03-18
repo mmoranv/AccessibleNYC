@@ -72,7 +72,7 @@ body {
 
 #last-page {
   background-color: #fff;
-  background-image: url('https://www.amny.com/transit/access-a-ride-changes-recommended-in-two-new-reports-1.12344805');
+  background-image: url('https://cdn.newsday.com/polopoly_fs/1.13754245.1498090663!/httpImage/image.jpeg_gen/derivatives/landscape_1280/image.jpeg');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -99,6 +99,9 @@ body {
   font-size: 10px;
   text-align: right;
   color: #FFFFFF;
+  margin-right: 25px;
+  margin-top: 10%;
+  margin-bottom: 0;
 }
 
 /***********
