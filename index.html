@@ -72,9 +72,8 @@
       <hr>
       <h4 class="paragraph mb-5"> <p>On 2016, 57% of New Yorkers used Public Transit to commute to work<sup>1</sup> <br>
         and there was a daily average of +5 million trips on the subway, and +2 million on buses. <sup>2</sup><br>
-        .<sup>1</sup><br>
-        However, 10% of NYC's population has some disability, and 13% of population is above the age of 65.
-        How bumpy is the commute for millions of disabled and senior New Yorkers?</p>
+        However, 10% of NYC's population has some disability, and 13% of population is above the age of 65.<br>
+        How bumpy is the commute for these New Yorkers?</p>
       </h4><hr>
       <a class="btn btn-primary bg-black btn-xl js-scroll-trigger" href="#subway-map">Take a look!</a>
       <hr>
@@ -88,16 +87,17 @@
   </div>
 
   <!-- Map -->
-  <section class="map" id="subway-map">
-    <div id="subway-map">
+  <div id="subway-map">
+    <div class="map">
     </div>
-  </section>
+  </div>
 
   <!-- Panel with buttons/layers -->
   <div id="panel">
-    <div class="container text-center my-auto">
+    <!-- <div class="title text-center my-auto">
       <h4><p>NYC Transit accessibility problem.</p> </h4>
-    </div>
+    </div> -->
+    <!-- </div> -->
 
     <!-- <div class="legend" id="panel-legend">
         <div> Transit Stations </div>
@@ -106,35 +106,41 @@
           <div class="legendItem colorBox" style="background: #A486B2"></div>Bus Stops</div>
     </div> -->
 
-    <div class="container text-center my-auto" id=panel-body>
+    <div class="title text-center my-auto" id=panel-body>
       <p>Click on the different buttons to see how accessible is NYC through subway and buses.</p>
-    <!-- </div> -->
-      <div class="container text-center my-auto">
-        <button class="btn btn-outline btn-ada mb1 black" id="btn-ada">Accessible Stations</button>
-        <button class="btn btn-outline btn-nada mb1 navy" id="btn-nada">Not Accessible Stations</button>
-        <button class="btn btn-outline btn-all mb1 blue" id="btn-all">All Subway Stations</button>
-        <button class="btn btn-outline btn-bus mb1 blue" id="btn-bus">All Bus Stops</button>
-        <button class="btn btn-outline btn-lines mb1 blue" id="btn-lines">Subway Lines</button>
-        <a class="btn btn-outline btn-primary js-scroll-trigger" href="#last-page">Find out more</a>
-      </div>
     </div>
+    <div class="text-center my-auto">
+      <button class="btn btn-outline btn-ada mb1 black" id="btn-ada">Accessible Stations</button>
+      <button class="btn btn-outline btn-nada mb1 navy" id="btn-nada">Not Accessible Stations</button>
+      <button class="btn btn-outline btn-all mb1 blue" id="btn-all">All Subway Stations</button>
+      <button class="btn btn-outline btn-bus mb1 blue" id="btn-bus">All Bus Stops</button>
+      <button class="btn btn-outline btn-lines mb1 blue" id="btn-lines">Subway Lines</button>
+      <a class="btn btn-outline btn-primary js-scroll-trigger" href="#last-page">Find out more</a>
+        </div>
   </div>
 
   <!-- last Page -->
   <div id="last-page">
-    <div class="paragraph container text-center my-auto">
-
-      <h2>2017 Paratransit Customer Satisfaction Study Access-A-Ride. NYC Transit.</h2>
-      <p style= font-size:16px>
-      <li><a target="_blank" href="http://web.mta.info/accessibility/">Guide to Accessible Transit</a><br> </li>
-      <li><a target="_blank" href="http://bustime.mta.info/">Is your bus running late?</a><br></li>
-      <a target="_blank" href="http://web.mta.info/mta/eles.html">Which stations' elevators are working?</a><br>
-      <a target="_blank" href="http://web.mta.info/nyct/paratran/guide.htm">Guide to register and book an<em>`Access-A-Ride`</em> trip</a><p>
+    <div class="container text-center my-auto">
+      <h2 class=title>2017 Paratransit Customer Satisfaction Study Access-A-Ride. NYC Transit.</h2>
+      <div class="paragraph"> <p style= font-size:18px>
+          Even though 82% of the NYC population is within a 1/2 mile of a subway station, only 25% of the stations are accessible to wheelchairs.<br>
+          Additionally,<br>
+          This limits<br>
+          The list below lists<br>
+          However, there is much to be done.<br> <p>
+      </div>
+      <div class="paragraph-not-shaded" style= font-size:16px>
+        <li><a target="_blank" href="http://web.mta.info/accessibility/">Guide to Accessible Transit</a></li>
+        <li><a target="_blank" href="http://bustime.mta.info/">Is your bus running late?</a></li>
+        <li><a target="_blank" href="http://web.mta.info/mta/eles.html">Which stations' elevators are working?</a></li>
+        <li><a target="_blank" href="http://web.mta.info/nyct/paratran/guide.htm">Guide to register and book an<em>`Access-A-Ride`</em> trip</a></li><p>
       <hr>
-    </div>
-    <div class="sources">
-      <em><a target="_blank" href="http://furmancenter.org/files/sotc/SOC_2016_PART2_City_Borough_CD_Data.pdf">3. </a> State of New York City's Housing and Neighborhoods - 2016 Report. NYU Furman Center.</em><br>
-      <em>Photo: Charles Eckert</em>
+      </div>
+      <div class="sources">
+        <em><a target="_blank" href="http://furmancenter.org/files/sotc/SOC_2016_PART2_City_Borough_CD_Data.pdf">3. </a> State of New York City's Housing and Neighborhoods - 2016 Report. NYU Furman Center.</em><br>
+        <em>Photo: Charles Eckert</em>
+      </div>
     </div>
   </div>
 
@@ -152,16 +158,16 @@
   <script src="//code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 
   <!-- Popper.js -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> -->
 
   <!--Bootstrap JS -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
 
   <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
 
-  <!-- Plugin JavaScript -->
+  <!-- jQuery easing for smooth transitions -->
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
   <!-- script -->

@@ -32,7 +32,7 @@ body {
 }
 
 #second {
-  background-image: url('https://cdn.newsday.com/polopoly_fs/1.16465836.1517441155!/httpImage/image.jpeg_gen/derivatives/landscape_1280/image.jpeg');
+  background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url('https://cdn.newsday.com/polopoly_fs/1.16465836.1517441155!/httpImage/image.jpeg_gen/derivatives/landscape_1280/image.jpeg');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -55,6 +55,16 @@ body {
   z-index: 2;
 }
 
+.map {
+  height: 30rem;
+}
+
+@media (max-width: 992px) {
+  .map {
+    height: 75%;
+  }
+}
+
 #panel {
   background-color: black;
   background-position: center center;
@@ -67,12 +77,13 @@ body {
 }
 
 #panel-body {
-  width: 70%;
+  /* width: 70%; */
+  width: 100%;
 }
 
 #last-page {
   background-color: #fff;
-  background-image: url('https://cdn.newsday.com/polopoly_fs/1.13754245.1498090663!/httpImage/image.jpeg_gen/derivatives/landscape_1280/image.jpeg');
+  background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url('https://cdn.newsday.com/polopoly_fs/1.13754245.1498090663!/httpImage/image.jpeg_gen/derivatives/landscape_1280/image.jpeg');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -92,7 +103,10 @@ body {
 .paragraph {
   color: #FFFFFF;
   text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
-  ;
+}
+
+.paragraph-not-shaded {
+  color: #FFFFFF;
 }
 
 .sources {
@@ -303,6 +317,24 @@ body {
 
 /* visited link */
 .paragraph a:visited {
+    color: #fff;
+}
+
+.paragraph-not-shaded a {
+  color: #fff;
+}
+
+.paragraph-not-shaded a:hover, .paragraph-not-shaded a:focus, .paragraph-not-shaded a:active {
+  color: #004d99;
+}
+
+/* unvisited link */
+.paragraph-not-shaded a:link {
+    color: #fff;
+}
+
+/* visited link */
+.paragraph-not-shaded a:visited {
     color: #fff;
 }
 /***********************/
