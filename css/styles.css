@@ -21,7 +21,7 @@ body {
 /*Sections*/
 /**********/
 #first {
-  background-image: url('/img/subway1.jpg');
+  background-image: url('https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i9CM_YafJQ2w/v1/-1x-1.jpg');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -32,7 +32,7 @@ body {
 }
 
 #second {
-  background-image: url('/img/subway2.jpg');
+  background-image: url('https://cdn.newsday.com/polopoly_fs/1.16465836.1517441155!/httpImage/image.jpeg_gen/derivatives/landscape_1280/image.jpeg');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -72,6 +72,7 @@ body {
 
 #last-page {
   background-color: #fff;
+  background-image: url('https://www.amny.com/transit/access-a-ride-changes-recommended-in-two-new-reports-1.12344805');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -266,22 +267,40 @@ body {
 /**********/
 /* links */
 /*********/
-a {
+.sources a {
   color: #fff;
 }
 
-a:hover, a:focus, a:active {
+.sources a:hover, .sources a:focus, .sources a:active {
   color: #004d99;
 }
 
 /* unvisited link */
-a:link {
-    color: #004d99;
+.sources a:link {
+    color: #fff;
 }
 
 /* visited link */
-a:visited {
-    color: #004d99;
+.sources a:visited {
+    color: #fff;
+}
+
+.paragraph a {
+  color: #fff;
+}
+
+.paragraph a:hover, .paragraph a:focus, .paragraph a:active {
+  color: #004d99;
+}
+
+/* unvisited link */
+.paragraph a:link {
+    color: #fff;
+}
+
+/* visited link */
+.paragraph a:visited {
+    color: #fff;
 }
 /***********************/
 /* Navigation buttons */
