@@ -54,8 +54,8 @@
   <!-- Cover, landing page -->
   <div id="first">
     <div class="paragraph text-center my-auto">
-      <h1 class="title mb-1">Accessible NYC</h1>
-      <h3 class="paragraph mb-5"><em>A look into how NYC Transit challenges seniors and disabled persons.</em></h3>
+      <h1 class="shaded-text">Accessible NYC</h1>
+      <h3 class="shaded-text paragraph mb-5"><em>A look into how NYC Transit challenges seniors and disabled persons.</em></h3>
       <a class="btn btn-primary btn-xl js-scroll-trigger" href="#second">Find out more</a>
       <hr>
     </div>
@@ -68,9 +68,9 @@
   <!-- Intro -->
   <div id="second">
     <div class="paragraph text-center my-auto">
-      <h2 class="title"> NYC Public Transit is essential, but if you use a wheelchair, it may be out of reach! </h2>
+      <h2 class="shaded-text"> NYC Public Transit is essential, but if you use a wheelchair, it may be out of reach! </h2>
       <hr>
-      <h4 class="paragraph mb-5"> <p>On 2016, 57% of New Yorkers used Public Transit to commute to work<sup>1</sup> <br><br>
+      <h4 class="shaded-text mb-5"> <p>On 2016, 57% of New Yorkers used Public Transit to commute to work<sup>1</sup> <br><br>
         and there was a daily average of +5 million trips on the subway, and +2 million on buses. <sup>2</sup><br><br>
         However, 10% of NYC's population has some disability, and 13% of population is above the age of 65.<br><br>
         How bumpy is the commute for these New Yorkers?</p>
@@ -94,43 +94,31 @@
 
   <!-- Panel with buttons/layers -->
   <div id="panel">
-    <!-- <div class="title text-center my-auto">
-      <h4><p>NYC Transit accessibility problem.</p> </h4>
-    </div> -->
-    <!-- </div> -->
-
-    <!-- <div class="legend" id="panel-legend">
-        <div> Transit Stations </div>
-          <div class="legendItem colorBox" style="background: #00CC66"></div>Subway: Accessible</div>
-          <div class="legendItem colorBox" style="background: #cc0000"></div>Subway: Non-accessible</div>
-          <div class="legendItem colorBox" style="background: #A486B2"></div>Bus Stops</div>
-    </div> -->
-
-    <div class="title text-center my-auto" id=panel-body>
-      <p>Click on the different buttons to see how accessible is NYC through subway and buses.</p>
+    <div class="paragraph shaded-text text-center my-auto" style='font-size:18px' id=panel-body>
+      <p>Use the buttons to see all the subway stations or only the accessible ones. Hover over a station to view accessibility detail.</p>
     </div>
-    <div class="text-center my-auto">
-      <button class="btn btn-outline btn-ada mb1 black" id="btn-ada">Accessible Stations</button>
-      <button class="btn btn-outline btn-nada mb1 navy" id="btn-nada">Not Accessible Stations</button>
-      <button class="btn btn-outline btn-all mb1 blue" id="btn-all">All Subway Stations</button>
-      <button class="btn btn-outline btn-bus mb1 blue" id="btn-bus">All Bus Stops</button>
-      <button class="btn btn-outline btn-lines mb1 blue" id="btn-lines">Subway Lines</button>
-      <a class="btn btn-outline btn-primary js-scroll-trigger" href="#last-page">Find out more</a>
-        </div>
+      <div class="btn-group" style='margin-left:40%' style='margin-right:40%'>
+        <button class="btn btn-outline btn-all" id="btn-all">All Subway Stations</button>
+        <button class="btn btn-outline btn-ada" id="btn-ada">Accessible Stations</button>
+        <!-- <button class="btn btn-outline btn-nada" id="btn-nada">Not Accessible Stations</button> -->
+      </div>
+      <div style='margin-left:47%' style='margin-right:50%'>
+        <a class="btn btn-primary js-scroll-trigger" href="#last-page">Find out more</a>
+      </div>
   </div>
 
   <!-- last Page -->
   <div id="last-page">
     <div>
-      <h2 class=title>2017 Paratransit Customer Satisfaction Study Access-A-Ride. NYC Transit.</h2>
-      <div class="paragraph my-auto"> <p style= font-size:18px>
+      <h2 class="paragraph shaded-text">2017 Paratransit Customer Satisfaction Study Access-A-Ride. NYC Transit.</h2>
+      <div class="paragraph shaded-text my-auto"> <p style= font-size:18px>
           Even though 82% of the NYC population is within a 1/2 mile of a subway station, only 25% of the stations are accessible to wheelchairs.<sup>1</sup><br>
           Additionally,<br>
           This limits<br>
           The list below lists<br>
           However, there is much to be done.<br> <p>
       </div>
-      <div class="paragraph-not-shaded" style= font-size:16px>
+      <div class="paragraph" style= font-size:16px>
         <li><a target="_blank" href="http://web.mta.info/accessibility/">Guide to Accessible Transit</a></li>
         <li><a target="_blank" href="http://bustime.mta.info/">Is your bus running late?</a></li>
         <li><a target="_blank" href="http://web.mta.info/mta/eles.html">Which stations' elevators are working?</a></li>
