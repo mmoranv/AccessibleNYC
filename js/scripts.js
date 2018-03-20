@@ -15,6 +15,7 @@ L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_L
   attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ',
   maxZoom: 15,
   scrollWheelZoom: false,
+  doubleClickZoom: true,
 }).addTo(map);
 
 // Code to activate scroll wheel zoom after a click on the map PENDING REVISION
@@ -23,8 +24,10 @@ map.scrollWheelZoom.disable();
 // ********************************** 2. Setting up layers************************************************
 //3 layers: All stations, Accessible stations, subway lines.
 //Subway lines
+map.createPane('SUB');
 $.getJSON('data/subway_lines.geojson', function(lines) {
   subway_lines = L.geoJSON(lines, {
+    pane: 'SUB',
     style: function(feature) {
       switch (feature.properties.rt_symbol) {
         case "1":
@@ -78,13 +81,15 @@ $.getJSON('data/subway_lines.geojson', function(lines) {
   }).addTo(map);
 });
 
+map.createPane('ALL');
 // Layer 2: All stations
 $.getJSON('data/all_stops_nyc_2017.geojson', function(subways) {
   all_stations = L.geoJSON(subways, {
     pointToLayer: function(feature, latlng) {
       return L.circleMarker(latlng, {
           color: "#cc0000",
-          radius: 2
+          radius: 2,
+          pane: 'ALL'
         }).bindPopup(feature.properties.stop_name)
         .openPopup().on('click', nada_stops)
         .on('mouseover', function(e) {
@@ -97,13 +102,15 @@ $.getJSON('data/all_stops_nyc_2017.geojson', function(subways) {
   }).addTo(map);
 });
 
+map.createPane('ADA');
 // Layer 3: Accessible stations
 $.getJSON('data/ada_stops_nyc_2017.geojson', function(subways) {
   ada_stops = L.geoJSON(subways, {
     pointToLayer: function(feature, latlng) {
       return L.circleMarker(latlng, {
           color: "#00c160",
-          radius: 2
+          radius: 2,
+          pane: 'ADA'
         }).bindPopup("<div style='text-align:center'>" + feature.properties.stop_name + " station is " + "<div style='color:#00c160'>" + " accessible " + "</div>" + " when using the " + feature.properties.trains + " train." + "</div>")
         .openPopup().on('click', nada_stops)
         .on('mouseover', function(e) {
