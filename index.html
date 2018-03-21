@@ -23,7 +23,27 @@
   <!-- CSS -->
   <link rel="stylesheet" href="css/styles.css?v=1.0">
 
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
   <title>Accessible NYC</title>
+
 </head>
 
 <!-- ***************** PAGE ***************-->
@@ -36,10 +56,10 @@
   <nav id="sidebar-wrapper">
     <ul class="sidebar-nav">
       <li class="sidebar-brand">
-        <a class="js-scroll-trigger" style:'color:#fff' href="#first">Accessible NYC</a>
+        <a class="js-scroll-trigger" style: 'color:#fff' href="#first">Accessible NYC</a>
       </li>
       <li class="sidebar-nav-item">
-        <a class="js-scroll-trigger" href="#second">Subway Coverage</a>
+        <a class="js-scroll-trigger" href="#second">Subway Importance</a>
       </li>
       <li class="sidebar-nav-item">
         <a class="js-scroll-trigger" href="#subway-map">Accessibility Map</a>
@@ -59,7 +79,7 @@
       <hr>
     </div>
     <div class="sources">
-      <em>Photo:Craig Warga/Bloomberg.</em><br>
+      <em>Photo credit:Craig Warga/Bloomberg.</em><br>
     </div>
 
   </div>
@@ -70,17 +90,18 @@
       <h2 class="shaded-text"> NYC Public Transit is essential, but if you use a wheelchair, it may be out of reach! </h2>
       <hr>
       <h5 class="shaded-text mb-5"> <p>In 2016, 57% of New Yorkers used Public Transit to commute to work<sup>1</sup> <br><br>
-        and there was a daily average of over 5 million trips on the subway, and more than 2 million on buses. <sup>2</sup><br><br>
+        with a daily average of over 5 million trips on the subway. <sup>2</sup><br><br>
         However, 10% of NYC's population has some disability, and 13% of the population is above the age of 65.<br><br>
         How bumpy is the commute for these New Yorkers?</p>
-      </h5><hr>
+      </h5>
+      <hr>
       <a class="btn btn-primary bg-black btn-xl js-scroll-trigger" href="#subway-map">Take a look!  <i class="fa fa-arrow-down" aria-hidden="true"></i></a>
       <hr>
       <div class="sources">
-        <em><a target="_blank" href="https://factfinder.census.gov/faces/nav/jsf/pages/searchresults.xhtml?refresh=t">1. </a>Means of transportation to work. American Community Survey.</em><br>
-        <em><a target="_blank" href="http://web.mta.info/nyct/facts/ridership/">2. </a></em> Introduction to Subway Ridership. MTA info.<br>
-        <em><a target="_blank" href="https://citylimits.org/2018/03/07/citys-buses-are-slow-unreliable-and-what-many-disabled-aging-nyers-depend-on/">3. </a> City Buses Are Slow, Unreliable and What Many Disabled & Aging NYers Rely On. City Limits. 3/7/18</em><br>
-        <em> Photo: Yeong-Ung Yang </em>
+        <em><a target="_blank" href="https://factfinder.census.gov/faces/nav/jsf/pages/searchresults.xhtml?refresh=t">1. Means of transportation to work. American Community Survey.</a></em><br>
+        <em><a target="_blank" href="http://web.mta.info/nyct/facts/ridership/">2. Introduction to Subway Ridership. MTA info.</a></em><br>
+        <em><a target="_blank" href="https://citylimits.org/2018/03/07/citys-buses-are-slow-unreliable-and-what-many-disabled-aging-nyers-depend-on/">3. City Buses Are Slow, Unreliable and What Many Disabled & Aging NYers Rely On. City Limits. 03/07/18</a></em><br>
+        <em> Photo credit: Yeong-Ung Yang.</em>
       </div>
     </div>
   </div>
@@ -93,70 +114,63 @@
 
   <!-- Panel with buttons/layers -->
   <div id="panel">
-    <div class="paragraph shaded-text text-center my-auto" style='font-size:18px' id=panel-body>
+    <div class="paragraph shaded-text text-center my-auto" style='font-size:16px'>
       <p>Use the buttons to see all the subway stations or only the accessible ones. Hover over a station to view accessibility detail.</p>
     </div>
-      <div class="btn-group" style='margin-left:40%' style='margin-right:60%'>
-        <button class="btn btn-outline btn-all" id="btn-all">All Subway Stations</button>
-        <button class="btn btn-outline btn-ada" id="btn-ada">Accessible Stations</button>
-        <!-- <button class="btn btn-outline btn-nada" id="btn-nada">Not Accessible Stations</button> -->
-      </div>
-      <div style='margin-left:80%'>
-        <a class="btn btn-primary js-scroll-trigger" style='font-size:14px' href="#last-page">Find out more <i class="fa fa-arrow-down" aria-hidden="true"></i> </a>
-      </div>
+    <div class="text-center">
+      <button class="btn btn-outline btn-all" id="btn-all">All Subway Stations</button>
+      <button class="btn btn-outline btn-ada" id="btn-ada">Accessible Stations</button>
+    </div>
+    <div class='everythingOnOneLine' style='margin-left:42%'>
+      <div class='sources-map' style='color:#fff'> <em>Map based on data from NYC Open Data, MTA and Baruch College. 2017.</em></div>
+      <div><a class="btn btn-primary js-scroll-trigger" style='font-size:14px' href="#last-page">Find out more <i class="fa fa-arrow-down" aria-hidden="true"></i> </a></div>
+    </div>
   </div>
 
   <!-- last Page -->
   <div id="last-page">
-    <div>
-      <h2 class="paragraph shaded-text">2017 Paratransit Customer Satisfaction Study Access-A-Ride. NYC Transit.</h2>
-      <div class="paragraph shaded-text my-auto"> <p style= font-size:18px>
-          Even though 82% of the NYC population is within a 1/2 mile of a subway station, only 25% of the stations are accessible to wheelchairs.<sup>1</sup><br>
-          Additionally,<br>
-          This limits<br>
-          The list below lists<br>
-          However, there is much to be done.<br> <p>
-      </div>
-      <div class="paragraph" style= font-size:16px>
-        <li><a target="_blank" href="http://web.mta.info/accessibility/">Guide to Accessible Transit</a></li>
-        <li><a target="_blank" href="http://bustime.mta.info/">Is your bus running late?</a></li>
-        <li><a target="_blank" href="http://web.mta.info/mta/eles.html">Which stations' elevators are working?</a></li>
-        <li><a target="_blank" href="http://web.mta.info/nyct/paratran/guide.htm">Guide to register and book an<em>`Access-A-Ride`</em> trip</a></li><p>
-      <hr>
-      </div>
-      <div class="sources">
-        <em><a target="_blank" href="http://furmancenter.org/files/sotc/SOC_2016_PART2_City_Borough_CD_Data.pdf">1. </a> State of New York City's Housing and Neighborhoods - 2016 Report. NYU Furman Center.</em><br>
-        <em>Photo: Charles Eckert</em>
-      </div>
+    <h2 class="paragraph shaded-text">Only 25% of the subway stations are accessible to wheelchairs.</h2>
+    <hr>
+    <div class="paragraph shaded-text my-auto" style='font-size:18px'>
+      <p>Even though 82% of the NYC population is 1/2 mile from a subway station,<sup>1</sup><br>
+        the vast majority of the subway is not suited for senior and disabled population.<sup>2</sup><br><hr>
+        Services like buses and Access-A-Ride can help these citizens get around NYC,<br>
+        but they are unreliable and slow.<sup>3 4</sup><br>
+        Thus, NYC Public Transit continues to be a challenge for millions of citizens.<br>
+        <hr>
+        The list below provides some resources for better planning your trip and booking Access-A-Ride,<br>
+        but until more subway stations are adapted, there is a long way to a more inclusive Public Transit.
+      </p>
+    </div>
+    <hr>
+    <div class="paragraph" style='font-size:16px' >
+      <li><a target="_blank" href="http://web.mta.info/accessibility/">Guide to Accessible Transit</a></li>
+      <li><a target="_blank" href="http://bustime.mta.info/">Is your bus running late?</a></li>
+      <li><a target="_blank" href="http://web.mta.info/mta/eles.html">Which stations' elevators are working?</a></li>
+      <li><a target="_blank" href="http://web.mta.info/nyct/paratran/guide.htm">Guide to register and book an<em>`Access-A-Ride`</em> trip</a></li>
+      <p>
+    </div>
+    <hr>
+    <div class="sources">
+      <em><a target="_blank" href="http://furmancenter.org/files/sotc/SOC_2016_PART2_City_Borough_CD_Data.pdf">1. State of New York City's Housing and Neighborhoods - 2016 Report. NYU Furman Center.</a></em><br>
+      <em><a target="_blank" href="https://ny.curbed.com/2017/9/21/16315042/nyc-subway-wheelchair-accessible-ada">2. The NYC subway has an accessibility problem—can it be fixed?. Curbed New York. 09/21/2017</a></em><br>
+      <em><a target="_blank" href="http://web.mta.info/nyct/paratran/pdf/RPT292%20Access-A-Ride%20Report%202017.pdf">3. 2017 Paratransit Customer Satisfaction Study: Access-A-Ride. MTA.</a></em><br>
+      <em><a target="_blank" href="https://wagner.nyu.edu/files/rudincenter/2016/09/INTELLIGENT_PARATRANSIT.pdf">4. Intelligent Paratransit. NYU Rudin Center.</a></em><br>
+      <em>Photo credit: Charles Eckert.</em>
     </div>
   </div>
 
-
   <!-- Scroll to Top Button-->
   <a class="scroll-to-top rounded js-scroll-trigger" href="#first">
-      <i class="fa fa-angle-up"></i>
-    </a>
+      <i class="fa fa-angle-up"></i></a>
 
   <!-- ***************** SCRIPTS ***************-->
   <!-- leaflet map script -->
   <script src="//unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
-
   <!-- jquery code -->
   <script src="//code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-
-  <!-- Popper.js -->
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> -->
-
-  <!--Bootstrap JS -->
-  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
-
-  <!-- Bootstrap core JavaScript -->
-  <!-- <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
-
   <!-- jQuery easing for smooth transitions -->
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
   <!-- script -->
   <script src="js/scripts.js"></script>
 

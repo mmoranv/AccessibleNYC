@@ -1,63 +1,41 @@
 # Accessible NYC
 by Mariano Morán
-3/10/2018
+3/20/2018
 
-A map with
-NYC Subway Stations that are accessible to wheelchairs
-The map will feature every station point, every line and train in NYC
-It will have features that will make possible to toggle on and off by
-certain lines
-accessible or Not
+## Description:
+This is a website that shows a glimpse of how poor is the accessibility coverage in subway stations in NYC.
+It does so by integrating sections, buttons, and transitions of a bootstrap template with a leaflet map with layers of the NYC subway lines, and its stations.
 
-* MTA Subway stations
-Combining spatial info of subway stations
+## Sources
+* NYC Subway stations shapefile (January 2017) by Baruch College
+This shapefile contains updated info on lines, and addresses of each station.
 https://www.baruch.cuny.edu/confluence/display/geoportal/NYC+Mass+Transit+Spatial+Layers
-** The one I used is 2017 - Jan	Subway Stops	points	shapefile	stops_nyc_subway_jan2017.zip
-with info on accessible stations
+
+* NYC Subway Stations Accessibility Information by MTA
+Captured by hand information on every station's accessibility into the shapefile attribute table.
 http://web.mta.info/accessibility/stations.htm
 
-* leaflet
-http://leafletjs.com/examples/quick-start/
+* NYC Subway Lines shapefile by NYC OpenData
+Characterized color of the lines using features in the attributes table.
+https://data.cityofnewyork.us/Transportation/Subway-Lines/3qz8-muuu/data
 
-* papa parse for csvs
-https://www.papaparse.com/
+* Stylish Porfolio Bootstrap template by StartBootstrap
+Used mainly for rounding of buttons, side navigation bar, scroll-to-top button, and smooth transitions.
+https://startbootstrap.com/template-overviews/stylish-portfolio/
 
-* cloropleth?
-http://leafletjs.com/examples/choropleth/
+## Highlights of website development
+Map:
+* The map layers were downloaded, processed in ArcGIS and QGIS, then exported to geojson format and loaded as geojson in the script.
+* The map has scrolling zoom disabled.
+* The layers use `map.createPane` to order their loading/presentation.
+* The Stations have a hover pop up message with changing colors for Accessible stations.
+* The map Buttons change colors when hovered and clicked, using classes, styles, and `toggle.Class`, `remove.Class`, and `add.Class` via jQuery
 
-* chris examples
-https://chriswhong.github.io/leaflet-landuse-demo/
+Other stuff:
+* Text shadow and darkened backgrounds were used to remark the text over the background images.
+* The transition buttons, sidebar, and scroll to top button come from the bootstrap template but were modified to agree with the styling.
+* Lots of files for css and js for the template were eliminated, as they served no purpose in this website.
+* The buttons and sources beneath the panel were aligned using `display: inline` properties in created classes.
 
-* mapshaper
-http://mapshaper.org/
-
-* Class Doc
-https://docs.google.com/document/d/1wlEAFtoJMjeBE8XuznjjivVZ7tuPgRyqPDUeidHgfg4/edit
-
-
-* TO INCLUDE
-
-* Sign up for ADA email alerts
-http://advisory.mtanyct.info/EEoutage/Signup.aspx
-
-* Article
-https://ny.curbed.com/2017/9/21/16344776/nyc-subway-accessibility-essay 
-https://ny.curbed.com/2017/9/21/16315042/nyc-subway-wheelchair-accessible-ada
-
-The assignment just says to make use of geoJSON formatted data, and use L.geoJSON() in leaflet to make a map...
-
-The steps I went through in class were:
-1) download data
-2) use QGIS to open the data and export a small part of the original data on geoJSON format, and to convert the coordinate reference system from 2263 to 4326 (NY state plate to WGS84(lat/lon))
-3) add the geojson to a leaflet project, either by creating a .js file from the geoJSON and prepending `var myData = ` to it
-or, adding the raw `.geojson` file to the project and using jquery `$.getJSON()` to load it
-I then added data-driven styling to it by passing an options object to L.geoJSON()
-
-## Progress
-The cooordinate system was wrong. Now it's fixed.
-
-## TO FIX
-1 - Color of the markers, function
-2 - Shape of the markers
-3 - That bloody banner
-4 - The popup message
+## Acknowledgments
+Sincere thanks to Professor Chris Wong, Maxwell Austensen, Monica Flores, Rigel Jarabo, Ari Kaputkin & Niki Kokkinos for their help.

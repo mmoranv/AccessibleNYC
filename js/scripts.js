@@ -7,7 +7,6 @@ var map = L.map('subway-map').setView(defaultCenter, defaultZoom);
 let all_stops
 let ada_stops
 let nada_stops
-let bus_stops
 let subway_lines
 
 // WorldGreyCanvas TileLayer from http://leaflet-extras.github.io/leaflet-providers/preview/
@@ -149,17 +148,6 @@ $("#btn-ada").click(function() {
       map.addLayer(ada_stops);
   }
 });
-// Non accessible stations
-// var NADAOn = true;
-// $("#btn-nada").click(function() {
-//   if (NADAOn) {
-//     map.removeLayer(nada_stops);
-//     NADAOn = null;
-//   } else {
-//     NADAOn = true,
-//       map.addLayer(nada_stops);
-//   }
-// });
 
 // Functions for scroll-to-top buttons and sidebar (modified from bootstrap template)
 (function($) {
