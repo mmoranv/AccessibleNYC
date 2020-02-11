@@ -37,5 +37,8 @@ Other stuff:
 * Lots of files for css and js for the template were eliminated, as they served no purpose in this website.
 * The buttons and sources beneath the panel were aligned using `display: inline` properties in created classes.
 
+## website
+Accessible(!) at https://mmoranve.github.io/AccessibleNYC/
+
 ## Acknowledgments
 Sincere thanks to Professor Chris Wong, Maxwell Austensen, Monica Flores, Rigel Jarabo, Ari Kaputkin & Niki Kokkinos for their help.
