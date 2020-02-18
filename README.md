@@ -1,5 +1,4 @@
 # Accessible NYC
-by Mariano Morán
 3/20/2018
 
 ## Description:
@@ -38,7 +37,4 @@ Other stuff:
 * The buttons and sources beneath the panel were aligned using `display: inline` properties in created classes.
 
 ## website
-Accessible(!) at https://mmoranve.github.io/AccessibleNYC/
-
-## Acknowledgments
-Sincere thanks to Professor Chris Wong, Maxwell Austensen, Monica Flores, Rigel Jarabo, Ari Kaputkin & Niki Kokkinos for their help.
+Accessible(!) at https://sillysalope.github.io/AccessibleNYC/
